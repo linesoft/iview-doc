@@ -472,11 +472,25 @@ const routers = [
         component: (resolve) => require(['./views/components/notice.vue'], resolve)
     },
     {
+        path: '/components/notice-en',
+        meta: {
+            title: 'Notice'
+        },
+        component: (resolve) => require(['./views/components/notice-en.vue'], resolve)
+    },
+    {
         path: '/components/modal',
         meta: {
             title: '对话框 Modal'
         },
         component: (resolve) => require(['./views/components/modal.vue'], resolve)
+    },
+    {
+        path: '/components/modal-en',
+        meta: {
+            title: 'Modal'
+        },
+        component: (resolve) => require(['./views/components/modal-en.vue'], resolve)
     },
     {
         path: '/components/progress',
@@ -610,6 +624,13 @@ const routers = [
             title: '分页 Page'
         },
         component: (resolve) => require(['./views/components/page.vue'], resolve)
+    },
+    {
+        path: '/components/page-en',
+        meta: {
+            title: 'Page'
+        },
+        component: (resolve) => require(['./views/components/page-en.vue'], resolve)
     },
     {
         path: '/components/breadcrumb',
