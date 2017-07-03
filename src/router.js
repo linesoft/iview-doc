@@ -192,6 +192,13 @@ const routers = [
         component: (resolve) => require(['./views/guide/update.vue'], resolve)
     },
     {
+        path: '/docs/guide/update-en',
+        meta: {
+            title: 'Changelog'
+        },
+        component: (resolve) => require(['./views/guide/update-en.vue'], resolve)
+    },
+    {
         path: '/components/grid',
         meta: {
             title: '栅格 Grid'
@@ -297,6 +304,13 @@ const routers = [
         component: (resolve) => require(['./views/components/radio.vue'], resolve)
     },
     {
+        path: '/components/radio-en',
+        meta: {
+            title: 'Radio'
+        },
+        component: (resolve) => require(['./views/components/radio-en.vue'], resolve)
+    },
+    {
         path: '/components/checkbox',
         meta: {
             title: '多选框 Checkbox'
@@ -318,11 +332,25 @@ const routers = [
         component: (resolve) => require(['./views/components/switch.vue'], resolve)
     },
     {
+        path: '/components/switch-en',
+        meta: {
+            title: 'Switch'
+        },
+        component: (resolve) => require(['./views/components/switch-en.vue'], resolve)
+    },
+    {
         path: '/components/table',
         meta: {
             title: '表格 Table'
         },
         component: (resolve) => require(['./views/components/table.vue'], resolve)
+    },
+    {
+        path: '/components/table-en',
+        meta: {
+            title: 'Table'
+        },
+        component: (resolve) => require(['./views/components/table-en.vue'], resolve)
     },
     {
         path: '/components/select',
@@ -332,11 +360,25 @@ const routers = [
         component: (resolve) => require(['./views/components/select.vue'], resolve)
     },
     {
+        path: '/components/select-en',
+        meta: {
+            title: 'Select'
+        },
+        component: (resolve) => require(['./views/components/select-en.vue'], resolve)
+    },
+    {
         path: '/components/slider',
         meta: {
             title: '滑块 Slider'
         },
         component: (resolve) => require(['./views/components/slider.vue'], resolve)
+    },
+    {
+        path: '/components/slider-en',
+        meta: {
+            title: 'Slider'
+        },
+        component: (resolve) => require(['./views/components/slider-en.vue'], resolve)
     },
     {
         path: '/components/date-picker',
@@ -360,6 +402,13 @@ const routers = [
         component: (resolve) => require(['./views/components/time-picker.vue'], resolve)
     },
     {
+        path: '/components/time-picker-en',
+        meta: {
+            title: 'TimePicker'
+        },
+        component: (resolve) => require(['./views/components/time-picker-en.vue'], resolve)
+    },
+    {
         path: '/components/cascader',
         meta: {
             title: '级联选择 Cascader'
@@ -379,6 +428,13 @@ const routers = [
             title: '穿梭框 Transfer'
         },
         component: (resolve) => require(['./views/components/transfer.vue'], resolve)
+    },
+    {
+        path: '/components/transfer-en',
+        meta: {
+            title: 'Transfer'
+        },
+        component: (resolve) => require(['./views/components/transfer-en.vue'], resolve)
     },
     {
         path: '/components/input-number',
@@ -402,11 +458,25 @@ const routers = [
         component: (resolve) => require(['./views/components/rate.vue'], resolve)
     },
     {
+        path: '/components/rate-en',
+        meta: {
+            title: 'Rate'
+        },
+        component: (resolve) => require(['./views/components/rate-en.vue'], resolve)
+    },
+    {
         path: '/components/upload',
         meta: {
             title: '上传 Upload'
         },
         component: (resolve) => require(['./views/components/upload.vue'], resolve)
+    },
+    {
+        path: '/components/upload-en',
+        meta: {
+            title: 'Upload'
+        },
+        component: (resolve) => require(['./views/components/upload-en.vue'], resolve)
     },
     {
         path: '/components/form',
@@ -500,6 +570,13 @@ const routers = [
         component: (resolve) => require(['./views/components/progress.vue'], resolve)
     },
     {
+        path: '/components/progress-en',
+        meta: {
+            title: 'Progress'
+        },
+        component: (resolve) => require(['./views/components/progress-en.vue'], resolve)
+    },
+    {
         path: '/components/badge',
         meta: {
             title: '徽标数 Badge'
@@ -549,6 +626,13 @@ const routers = [
         component: (resolve) => require(['./views/components/tag.vue'], resolve)
     },
     {
+        path: '/components/tag-en',
+        meta: {
+            title: 'Tag'
+        },
+        component: (resolve) => require(['./views/components/tag-en.vue'], resolve)
+    },
+    {
         path: '/components/tooltip',
         meta: {
             title: '文字提示 Tooltip'
@@ -556,11 +640,25 @@ const routers = [
         component: (resolve) => require(['./views/components/tooltip.vue'], resolve)
     },
     {
+        path: '/components/tooltip-en',
+        meta: {
+            title: 'Tooltip'
+        },
+        component: (resolve) => require(['./views/components/tooltip-en.vue'], resolve)
+    },
+    {
         path: '/components/poptip',
         meta: {
             title: '气泡提示 Poptip'
         },
         component: (resolve) => require(['./views/components/poptip.vue'], resolve)
+    },
+    {
+        path: '/components/poptip-en',
+        meta: {
+            title: 'Poptip'
+        },
+        component: (resolve) => require(['./views/components/poptip-en.vue'], resolve)
     },
     {
         path: '/components/carousel',
@@ -584,6 +682,13 @@ const routers = [
         component: (resolve) => require(['./views/components/tree.vue'], resolve)
     },
     {
+        path: '/components/tree-en',
+        meta: {
+            title: 'Tree'
+        },
+        component: (resolve) => require(['./views/components/tree-en.vue'], resolve)
+    },
+    {
         path: '/components/menu',
         meta: {
             title: '导航菜单 Menu'
@@ -603,6 +708,13 @@ const routers = [
             title: '标签页 Tabs'
         },
         component: (resolve) => require(['./views/components/tabs.vue'], resolve)
+    },
+    {
+        path: '/components/tabs-en',
+        meta: {
+            title: 'Tabs'
+        },
+        component: (resolve) => require(['./views/components/tabs-en.vue'], resolve)
     },
     {
         path: '/components/dropdown',
@@ -652,6 +764,13 @@ const routers = [
             title: '步骤条 Steps'
         },
         component: (resolve) => require(['./views/components/steps.vue'], resolve)
+    },
+    {
+        path: '/components/steps-en',
+        meta: {
+            title: 'Steps'
+        },
+        component: (resolve) => require(['./views/components/steps-en.vue'], resolve)
     },
     {
         path: '/components/loading-bar',
@@ -715,6 +834,13 @@ const routers = [
             title: '加载中 Spin'
         },
         component: (resolve) => require(['./views/components/spin.vue'], resolve)
+    },
+    {
+        path: '/components/spin-en',
+        meta: {
+            title: 'Spin'
+        },
+        component: (resolve) => require(['./views/components/spin-en.vue'], resolve)
     },
     {
         path: '*',

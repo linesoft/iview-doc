@@ -21,7 +21,7 @@
 </style>
 <template>
     <i-article>
-        <h1>更新日志</h1>
+        <h1>Change Log</h1>
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
@@ -317,7 +317,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Button type="ghost" size="large" @click="handleBefore">查看 1.x 版本的日志</Button>
+                    <Button type="ghost" size="large" @click="handleBefore">View Version 1.x's Logs</Button>
                 </Timeline-item>
             </Timeline>
         </article>

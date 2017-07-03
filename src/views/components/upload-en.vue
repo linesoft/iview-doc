@@ -39,23 +39,23 @@
 <template>
     <i-article>
         <article>
-            <h1>Upload 上传</h1>
-            <Anchor title="概述" h2></Anchor>
-            <p>文件选择上传和拖拽上传控件。</p>
-            <blockquote>暂不支持 IE9 浏览器。</blockquote>
-            <Anchor title="代码示例" h2></Anchor>
-            <Demo title="点击上传">
+            <h1>Upload</h1>
+            <Anchor title="Brief Introduction" h2></Anchor>
+            <p>File select upload and drag upload component.</p>
+            <blockquote>IE 9 is not supported.</blockquote>
+            <Anchor title="Examples" h2></Anchor>
+            <Demo title="Click to Upload">
                 <div slot="demo">
                     <Upload action="//jsonplaceholder.typicode.com/posts/">
                         <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
                     </Upload>
                 </div>
                 <div slot="desc">
-                    <p>最基本用法，点击上传，一次选择一个文件。</p>
+                    <p>Basic usage. Clikc to upload, each at one time.</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.select }}</i-code>
             </Demo>
-            <Demo title="多选">
+            <Demo title="Multi Choices">
                 <div slot="demo">
                     <Upload
                         multiple
@@ -64,11 +64,11 @@
                     </Upload>
                 </div>
                 <div slot="desc">
-                    <p>设置属性 <code>multiple</code>，可以选择多个文件。</p>
+                    <p>Set <code>multiple</code> prop to enable multi choices.</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.multiple }}</i-code>
             </Demo>
-            <Demo title="拖拽上传">
+            <Demo title="Drag to Upload">
                 <div slot="demo">
                     <Upload
                         multiple
@@ -81,11 +81,11 @@
                     </Upload>
                 </div>
                 <div slot="desc">
-                    <p>设置属性 <code>type</code> 为 <code>drag</code>，可以拖拽上传。</p>
+                    <p>Set <code>type</code> prop to <code>drag</code> to enable drag-to-upload.</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.drag }}</i-code>
             </Demo>
-            <Demo title="自定义上传列表">
+            <Demo title="Custom Upload List">
                 <div slot="demo">
                     <div class="demo-upload-list" v-for="item in uploadList">
                         <template v-if="item.status === 'finished'">
@@ -122,17 +122,17 @@
                     </Modal>
                 </div>
                 <div slot="desc">
-                    <p>可以自由控制上传列表，完成各种业务逻辑，示例是一个照片墙，可以查看大图和删除。</p>
+                    <p>You can control the upload list freely. The demo is a photo wall. You an view the big picture or delete the photo.</p>
                     <ul>
-                        <li>设置属性 <code>show-upload-list</code> 为 false，可以不显示默认的上传列表。</li>
-                        <li>设置属性 <code>default-file-list</code> 设置默认已上传的列表。</li>
-                        <li>通过 <code>on-success</code> 等属性来控制完整的上传过程，详见API。</li>
+                        <li>Set <code>show-upload-list</code> prop to false to hide the default upload list.</li>
+                        <li>Set <code>default-file-list</code> prop to set uploaded file list.</li>
+                        <li>Set <code>on-success</code> prop and some other props to control the upload procedure. Details on API Doc.</li>
                     </ul>
-                    <p>另外，可以通过丰富的配置，来定制上传需求，本例中包含了：</p>
+                    <p>By the way, you can meet your need by using our APIs creatively. The demo below includes: </p>
                     <ul>
-                        <li>文件必须是 jpg 或 png 格式的图片。</li>
-                        <li>最多上传5张图片。</li>
-                        <li>每个文件大小不超过 2M。</li>
+                        <li>The file format must be jpg or png image.</li>
+                        <li>Upload up to 5 images.</li>
+                        <li>The size of each image does not exceed 2M.</li>
                     </ul>
                 </div>
                 <i-code lang="html" slot="code">{{ code.list }}</i-code>
@@ -143,131 +143,131 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>属性</th>
-                            <th>说明</th>
-                            <th>类型</th>
-                            <th>默认值</th>
+                            <th>Property</th>
+                            <th>Decription</th>
+                            <th>Type</th>
+                            <th>Default</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>action</td>
-                            <td>上传的地址，必填</td>
+                            <td>Upload request URL, required.</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>headers</td>
-                            <td>设置上传的请求头部</td>
+                            <td>Upload request header.</td>
                             <td>Object</td>
                             <td>{}</td>
                         </tr>
                         <tr>
                             <td>multiple</td>
-                            <td>是否支持多选文件</td>
+                            <td>Enable multi choices or not.</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
                         <tr>
                             <td>data</td>
-                            <td>上传时附带的额外参数</td>
+                            <td>Extra data with upload request.</td>
                             <td>Object</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>name</td>
-                            <td>上传的文件字段名</td>
+                            <td>The key in upload request targeting to the file.</td>
                             <td>String</td>
                             <td>file</td>
                         </tr>
                         <tr>
                             <td>with-credentials</td>
-                            <td>支持发送 cookie 凭证信息</td>
+                            <td>Enable certification info in Cookie or not.</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
                         <tr>
                             <td>show-upload-list</td>
-                            <td>是否显示已上传文件列表</td>
+                            <td>Show upload file list or not.</td>
                             <td>Boolean</td>
                             <td>true</td>
                         </tr>
                         <tr>
                             <td>type</td>
-                            <td>上传控件的类型，可选值为 <code>select</code>（点击选择），<code>drag</code>（支持拖拽）</td>
+                            <td>The type of Upload. Optional value: <code>select</code>, <code>drag</code></td>
                             <td>String</td>
                             <td>select</td>
                         </tr>
                         <tr>
                             <td>accept</td>
-                            <td>接受上传的<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-accept" target="_blank">文件类型</a></td>
+                            <td>Accepted <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-accept" target="_blank">file formats</a>.</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>format</td>
-                            <td>支持的文件类型，与 accept 不同的是，format 是识别文件的后缀名，accept 为 input 标签原生的 accept 属性，会在选择文件时过滤，可以两者结合使用</td>
+                            <td>Accepted file formats. Different to accept prop, format recognizes the appendix of the file. Accept is same to HTML's input accept prop, it'll filter the file list during file selecting. You can use them together.</td>
                             <td>Array</td>
                             <td>[]</td>
                         </tr>
                         <tr>
                             <td>max-size</td>
-                            <td>文件大小限制，单位 kb</td>
+                            <td>File size limitation. Unit: kb</td>
                             <td>Number</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>before-upload</td>
-                            <td>上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传</td>
+                            <td>Hook before file starts to upload. The only parameter is the file. If the function return false, or a Promise, default upload procedure will be stopped.</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-progress</td>
-                            <td>文件上传时的钩子，返回字段为 event, file, fileList</td>
+                            <td>Hook when file is uploading. It has three params: event, file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-success</td>
-                            <td>文件上传成功时的钩子，返回字段为 response, file, fileList</td>
+                            <td>Hook when file is successfully uploaded. It has three params: response, file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-error</td>
-                            <td>文件上传失败时的钩子，返回字段为 error, file, fileList</td>
+                            <td>Hook when file is failed to upload. It has three params: error, file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-preview</td>
-                            <td>点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据</td>
+                            <td>Hook when clicking uploaded file link. The only parameter is file. You can get server-side response data in file.response.</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-remove</td>
-                            <td>文件列表移除文件时的钩子，返回字段为 file, fileList</td>
+                            <td>Hook when a certain file is removed from the file list. It has two params: file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-format-error</td>
-                            <td>文件格式验证失败时的钩子，返回字段为 file, fileList</td>
+                            <td>Hook when file format verification is failed. It has two params: file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>on-exceeded-size</td>
-                            <td>文件超出指定大小限制时的钩子，返回字段为 file, fileList</td>
+                            <td>Hook when file size exceeds the limitation. It has two params: file, fileList</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>default-file-list</td>
                             <td>
-                                默认已上传的文件列表，例如：
+                                Default uploaded file list. For example:
                                 <pre>
                                     <code>
 [
@@ -292,16 +292,16 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>方法名</th>
-                            <th>说明</th>
-                            <th>参数</th>
+                            <th>Method Name</th>
+                            <th>Description</th>
+                            <th>Arguments</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>clearFiles</td>
-                            <td>清空已上传的文件列表</td>
-                            <td>无</td>
+                            <td>Clear uploaded file list.</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -309,18 +309,18 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>名称</th>
-                            <th>说明</th>
+                            <th>Name</th>
+                            <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>无</td>
-                            <td>触发上传组件的控件</td>
+                            <td>-</td>
+                            <td>Component that activates the upload component.</td>
                         </tr>
                         <tr>
                             <td>tip</td>
-                            <td>辅助提示内容</td>
+                            <td>Tip content</td>
                         </tr>
                     </tbody>
                 </table>
