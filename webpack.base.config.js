@@ -32,8 +32,8 @@ module.exports = {
                           fallback: 'vue-style-loader'
                         }),
                         css: ExtractTextPlugin.extract({
-                          use: ['css-loader?minimize', 'autoprefixer-loader', 'less-loader'],
-                          fallback: 'vue-style-loader'
+                          use: ['css-loader?minimize', 'autoprefixer-loader', 'less-loader'], // use 编译的时用什么样的loader来编译
+                          fallback: 'vue-style-loader'  // fallback 编译后用什么样的loader来取
                         }),
                     },
                     postLoaders: {

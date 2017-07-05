@@ -1,7 +1,7 @@
 /**
  * Created by aresn on 16/6/20.
  */
-import 'babel-polyfill';
+import 'babel-polyfill'; //可以直接在浏览器环境使用es6中的一些方法
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
@@ -24,7 +24,7 @@ Vue.use(iView);
 Vue.config.debug = true;
 
 // 设置语言
-const navLang = navigator.language;
+const navLang = navigator.language; //获取语言
 const localLang = (navLang === 'zh-CN' || navLang === 'en-US') ? navLang : false;
 const lang = window.localStorage.getItem('language') || localLang || 'zh-CN';
 
@@ -52,14 +52,14 @@ if (Env != 'local') {
     RouterConfig.mode = 'history';
 }
 const router = new VueRouter(RouterConfig);
-
+// 路由开始
 router.beforeEach((to, from, next) => {
     iView.LoadingBar.start();
     bus.loading = true;
     Util.title(to.meta.title);
     next();
 });
-
+// 路由结束
 router.afterEach((to, from, next) => {
     iView.LoadingBar.finish();
     bus.loading = false;

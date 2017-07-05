@@ -6,6 +6,8 @@ var webpack = require('webpack');
 var config = require('./webpack.base.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 var fs = require('fs');
 
 config.devtool = '#source-map';                             // source-map
@@ -27,6 +29,10 @@ config.plugins = (config.plugins || []).concat([
         filename: './index.html',
         template: './src/template/index.ejs',
         inject: false
+    }),
+    new BundleAnalyzerPlugin({
+        analyzerHost: 'localhost',
+        analyzerPort: 8086,
     })
 ]);
 
