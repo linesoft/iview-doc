@@ -68,6 +68,20 @@
                 </div>
                 <i-code lang="html" slot="code">{{ code.multiple }}</i-code>
             </Demo>
+            <Demo title="手动上传">
+                <div slot="demo">
+                    <Upload
+                        :before-upload="handleUpload"
+                        action="//jsonplaceholder.typicode.com/posts/">
+                        <Button type="ghost" icon="ios-cloud-upload-outline">选择要上传文件的文件</Button>
+                    </Upload>
+                    <div v-if="file !== null">待上传文件：{{ file.name }} <Button type="text" @click="upload" :loading="loadingStatus">{{ loadingStatus ? '上传中' : '点击上传' }}</Button></div>
+                </div>
+                <div slot="desc">
+                    <p>绑定 <code>before-upload</code>，并返回<code>false</code>，可以阻止默认上传流程，手动控制文件上传。</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.manual }}</i-code>
+            </Demo>
             <Demo title="拖拽上传">
                 <div slot="demo">
                     <Upload
@@ -345,6 +359,8 @@
         data () {
             return {
                 code: Code,
+                file: null,
+                loadingStatus: false,
                 defaultList: [
                     {
                         'name': 'a42bdcc1178e62b4694c830f028db5c0',
@@ -361,6 +377,18 @@
             }
         },
         methods: {
+            handleUpload (file) {
+                this.file = file;
+                return false;
+            },
+            upload () {
+                this.loadingStatus = true;
+                setTimeout(() => {
+                    this.file = null;
+                    this.loadingStatus = false;
+                    this.$Message.success('上传成功')
+                }, 1500);
+            },
             handleView (name) {
                 this.imgName = name;
                 this.visible = true;
