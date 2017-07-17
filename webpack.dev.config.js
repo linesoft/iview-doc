@@ -30,10 +30,10 @@ config.plugins = (config.plugins || []).concat([
         template: './src/template/index.ejs',
         inject: false
     }),
-    new BundleAnalyzerPlugin({
+/*    new BundleAnalyzerPlugin({
         analyzerHost: 'localhost',
         analyzerPort: 8086,
-    })
+    })*/
 ]);
 
 // 写入环境变量
