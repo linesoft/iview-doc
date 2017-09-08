@@ -104,8 +104,8 @@ import Checkbox from 'iview/src/components/checkbox';
 install.warning = `
 module: {
     rules: [
-        { test: /iview.src.*?js$/, loader: 'babel' },
-        { test: /\\.js$/, loader: 'babel', exclude: /node_modules/ }
+        { test: /iview.src.*?js$/, loader: 'babel-loader' },
+        { test: /\\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
 }
 `;
@@ -131,7 +131,7 @@ standard.prop = `
 i18n.demo = `
 import Vue from 'vue';
 import iView from 'iview';
-import locale from 'iview/src/locale/lang/en-US';
+import locale from 'iview/dist/locale/en-US';
 
 Vue.use(iView, { locale });
 `;
@@ -140,8 +140,8 @@ i18n.vue = `
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import iView from 'iview';
-import zhLocale from 'iview/src/locale/lang/zh-CN';
-import enLocale from 'iview/src/locale/lang/en-US';
+import zhLocale from 'iview/dist/locale/zh-CN';
+import enLocale from 'iview/dist/locale/en-US';
 
 Vue.use(VueI18n);
 Vue.use(iView);

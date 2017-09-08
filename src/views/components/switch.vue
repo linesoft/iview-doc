@@ -81,7 +81,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>开关的尺寸，可选值为<code>large</code>、<code>small</code>或者不写。建议开关如果使用了2个汉字的文字，使用 large。</td>
+                            <td>开关的尺寸，可选值为<code>large</code>、<code>small</code>、<code>default</code>或者不写。建议开关如果使用了2个汉字的文字，使用 large。</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -89,6 +89,18 @@
                             <td>disabled</td>
                             <td>禁用开关</td>
                             <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>true-value</td>
+                            <td>选中时的值，当使用类似 1 和 0 来判断是否选中时会很有用</td>
+                            <td>String, Number, Boolean</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>false-value</td>
+                            <td>没有选中时的值，当使用类似 1 和 0 来判断是否选中时会很有用</td>
+                            <td>String, Number, Boolean</td>
                             <td>false</td>
                         </tr>
                     </tbody>

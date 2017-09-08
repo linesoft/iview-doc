@@ -19,7 +19,7 @@
             <Demo title="基础用法">
                 <div slot="demo">
                     <Select v-model="model1" style="width:200px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                     <span class="demo-data">{{ model1 }}</span>
                 </div>
@@ -34,13 +34,13 @@
             <Demo title="尺寸">
                 <div slot="demo">
                     <Select v-model="model2" size="small" style="width:100px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                     <Select v-model="model3" style="width:100px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                     <Select v-model="model4" size="large" style="width:100px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                 </div>
                 <div slot="desc">
@@ -51,7 +51,7 @@
             <Demo title="禁用">
                 <div slot="demo">
                     <Select v-model="model5" disabled style="width:200px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                     <Select v-model="model6" style="width:200px">
                         <Option value="beijing">北京市</Option>
@@ -68,7 +68,7 @@
             <Demo title="可清空">
                 <div slot="demo">
                     <Select v-model="model8" clearable style="width:200px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                     <span class="demo-data">{{ model8 }}</span>
                 </div>
@@ -80,17 +80,17 @@
             <Demo title="分组">
                 <div slot="demo">
                     <Select v-model="model7" style="width:200px">
-                        <Option-group label="热门城市">
-                            <Option v-for="item in cityList1" :value="item.value" :key="item">{{ item.label }}</Option>
-                        </Option-group>
-                        <Option-group label="其它城市">
-                            <Option v-for="item in cityList2" :value="item.value" :key="item">{{ item.label }}</Option>
-                        </Option-group>
+                        <OptionGroup label="热门城市">
+                            <Option v-for="item in cityList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                        </OptionGroup>
+                        <OptionGroup label="其它城市">
+                            <Option v-for="item in cityList2" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                        </OptionGroup>
                     </Select>
                     <span class="demo-data">{{ model7 }}</span>
                 </div>
                 <div slot="desc">
-                    <p>使用<code>Option-group</code>可将选项进行分组。</p>
+                    <p>使用<code>OptionGroup</code>可将选项进行分组。</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.group }}</i-code>
             </Demo>
@@ -122,7 +122,7 @@
                 <div slot="demo">
                     <p class="demo-data">{{ model10 }}</p>
                     <Select v-model="model10" multiple style="width:260px">
-                        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                 </div>
                 <div slot="desc">
@@ -135,12 +135,12 @@
                     <Row>
                         <Col span="12" style="padding-right:10px">
                             <Select v-model="model11" filterable>
-                                <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                                <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                             </Select>
                         </Col>
                         <Col span="12">
                             <Select v-model="model12" filterable multiple>
-                                <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                                <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                             </Select>
                         </Col>
                     </Row>
@@ -160,7 +160,7 @@
                                 remote
                                 :remote-method="remoteMethod1"
                                 :loading="loading1">
-                                <Option v-for="option in options1" :value="option.value" :key="new Date()">{{option.label}}</Option>
+                                <Option v-for="(option, index) in options1" :value="option.value" :key="index">{{option.label}}</Option>
                             </Select>
                         </Col>
                         <Col span="12">
@@ -171,14 +171,15 @@
                             remote
                             :remote-method="remoteMethod2"
                             :loading="loading2">
-                            <Option v-for="option in options2" :value="option.value" :key="new Date()">{{option.label}}</Option>
+                            <Option v-for="(option, index) in options2" :value="option.value" :key="index">{{option.label}}</Option>
                         </Select>
                         </Col>
                     </Row>
                 </div>
                 <div slot="desc">
-                    <p>远程搜索需同时设置 <code>filterable</code>、<code>remote</code>、<code>remote-method</code>、<code>loading</code> 四个 props，其中 loading 用于控制是否正则搜索中，remote-method 是远程搜索的方法。</p>
-                    <p>注意：需要给 Option 设置 key，本例以当前时间为 key。</p>
+                    <p>远程搜索需同时设置 <code>filterable</code>、<code>remote</code>、<code>remote-method</code>、<code>loading</code> 四个 props，其中 loading 用于控制是否正在搜索中，remote-method 是远程搜索的方法。</p>
+                    <p>注意：需要给 Option 设置 key。</p>
+                    <p>设置初始显示值，需设置 <code>label</code> 属性。</p>
                     <p>本例为美国州名，尝试输入一些字母。</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.remote }}</i-code>
@@ -240,7 +241,7 @@
                         </tr>
                         <tr>
                             <td>loading</td>
-                            <td>当前是否正则远程搜索</td>
+                            <td>当前是否正在远程搜索</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
@@ -258,7 +259,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>选择框大小，可选值为<code>large</code>和<code>small</code>或者不填</td>
+                            <td>选择框大小，可选值为<code>large</code>、<code>small</code>、<code>default</code>或者不填</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -285,6 +286,12 @@
                             <td>弹窗的展开方向，可选值为 <code>bottom</code> 和 <code>top</code></td>
                             <td>String</td>
                             <td>bottom</td>
+                        </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果</td>
+                            <td>Boolean</td>
+                            <td>false</td>
                         </tr>
                     </tbody>
                 </table>

@@ -10,6 +10,13 @@ const routers = [
         component: (resolve) => require(['./views/index.vue'], resolve)
     },
     {
+        path: '/vue-book',
+        meta: {
+            title: '《Vue.js 实战》预购'
+        },
+        component: (resolve) => require(['./views/vue-book.vue'], resolve)
+    },
+    {
         path: '/cli',
         meta: {
             title: 'iView Cli 可视化脚手架'
@@ -841,6 +848,48 @@ const routers = [
             title: 'Spin'
         },
         component: (resolve) => require(['./views/components/spin-en.vue'], resolve)
+    },
+    {
+        path: '/components/avatar',
+        meta: {
+            title: 'Avatar 头像'
+        },
+        component: (resolve) => require(['./views/components/avatar.vue'], resolve)
+    },
+    {
+        path: '/components/avatar-en',
+        meta: {
+            title: 'Avatar'
+        },
+        component: (resolve) => require(['./views/components/avatar-en.vue'], resolve)
+    },
+    {
+        path: '/components/color-picker',
+        meta: {
+            title: 'ColorPicker 颜色选择器'
+        },
+        component: (resolve) => require(['./views/components/color-picker.vue'], resolve)
+    },
+    {
+        path: '/components/color-picker-en',
+        meta: {
+            title: 'ColorPicker'
+        },
+        component: (resolve) => require(['./views/components/color-picker-en.vue'], resolve)
+    },
+    {
+        path: '/components/auto-complete',
+        meta: {
+            title: 'AutoComplete 自动完成'
+        },
+        component: (resolve) => require(['./views/components/auto-complete.vue'], resolve)
+    },
+    {
+        path: '/components/auto-complete-en',
+        meta: {
+            title: 'AutoComplete'
+        },
+        component: (resolve) => require(['./views/components/auto-complete-en.vue'], resolve)
     },
     {
         path: '*',

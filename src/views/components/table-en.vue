@@ -140,6 +140,7 @@
                     <div slot="desc">
                         <p>You can sort the data by setting <code>sortable: true</code> to a certain <code>columns</code> prop's item. </p>
                         <p>The sorting uses ascending order or descending order by default. You can customize sort method by setting <code>sortMethod</code> props with a function accepting 3 arguments: a, b and type.</p>
+                        <p>You can set <code>sortType</code> to column to sort when initialization.</p>
                         <p>If remote sorting is needed, you can set <code>sortable： 'custom'</code>, and do the remote sorting after <code>@on-sort-change</code> is emitted. After sorting, you have to set the new data manually. Details on API Doc.</p>
                         <p>Attention: Sorting won't affect source data.</p>
                     </div>
@@ -355,6 +356,16 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>on-select-cancel</td>
+                            <td>It works in multi-choices mode. Emitted when a certain row is deselected.</td>
+                            <td>
+                                <ul>
+                                    <li><code>selection</code>：Selected rows' data array</li>
+                                    <li><code>row</code>：Latest deselected row's data.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>on-select-all</td>
                             <td>It works in multi-choices mode. Emitted when clicking select-all checkbox.</td>
                             <td>
@@ -490,6 +501,12 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td>type</td>
+                            <td>Type of column, Optional value: <code>index</code>, <code>selection</code>, <code>expand</code>, <code>html</code></td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
                             <td>title</td>
                             <td>Column title.</td>
                             <td>String</td>
@@ -540,19 +557,25 @@
                         </tr>
                         <tr>
                             <td>renderHeader</td>
-                            <td>Custom column header renderer. It accepts two arguments: <code>column</code> and <code>index</code> (current col's data &amp; current index). It doesn't support custom component rendering.</td>
+                            <td>Custom column header renderer. It uses Vue's render function. It accepts two arguments: the first is h, the second is an object including <code>column</code> and <code>index</code> (current col's data &amp; current index).</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td>sortable</td>
-                            <td>The column is sortable or not. If set to<code>custom</code>, it means user wants a remote sorting. So you shall listen on-sort-change event on Table.</td>
+                            <td>The column is sortable or not. If set to <code>custom</code>, it means user wants a remote sorting. So you shall listen on-sort-change event on Table.</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
                         <tr>
                             <td>sortMethod</td>
-                            <td>Custom sort function. It accepts 3 arguments: a, b , type. It works when <code>sortable: true</code> is set. The value of type argument can be asc or desc.</td>
+                            <td>Custom sort function. It accepts 3 arguments: a, b, type. It works when <code>sortable: true</code> is set. The value of <code>type</code> argument can be asc or desc.</td>
+                            <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>sortType</td>
+                            <td>Set the initialization sort. Optional value: asc or desc.</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>

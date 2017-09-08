@@ -236,6 +236,12 @@
                             <td>String</td>
                             <td>Cancel</td>
                         </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>Whether to append the layer in body. When used in Tabs or a fixed Table column, suggests adding this property, it will not be affected by the parent style, resulting in better results.</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
                     </tbody>
                 </table>
                 <Anchor title="Poptip events" h3></Anchor>
@@ -248,6 +254,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>on-popper-show</td>
+                            <td>Emit when tooltip displays.</td>
+                            <td>-</td>
+                        </tr>
                         <tr>
                             <td>on-popper-hide</td>
                             <td>Emit when tooltip disappears.</td>

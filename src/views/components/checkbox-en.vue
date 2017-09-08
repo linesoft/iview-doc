@@ -22,7 +22,7 @@
             </Demo>
             <Demo title="Combination Usage">
                 <div slot="demo">
-                    <Checkbox-group v-model="social">
+                    <CheckboxGroup v-model="social">
                         <Checkbox label="twitter">
                             <Icon type="social-twitter"></Icon>
                             <span>Twitter</span>
@@ -39,17 +39,17 @@
                             <Icon type="social-snapchat"></Icon>
                             <span>Snapchat</span>
                         </Checkbox>
-                    </Checkbox-group>
+                    </CheckboxGroup>
                     <p class="demo-data">{{ social }}</p>
-                    <Checkbox-group v-model="fruit">
+                    <CheckboxGroup v-model="fruit">
                         <Checkbox label="香蕉"></Checkbox>
                         <Checkbox label="苹果"></Checkbox>
                         <Checkbox label="西瓜"></Checkbox>
-                    </Checkbox-group>
+                    </CheckboxGroup>
                     <p class="demo-data">{{ fruit }}</p>
                 </div>
                 <div slot="desc">
-                    <p>Use <code>Checkbox-group</code> combined with array to generate a combination. In this case, <code>Checkbox</code> uses <code>label</code> to judge selected state automatically. The content of each Checkbox can be customized. If not filled, the value of label prop will be used by default.</p>
+                    <p>Use <code>CheckboxGroup</code> combined with array to generate a combination. In this case, <code>Checkbox</code> uses <code>label</code> to judge selected state automatically. The content of each Checkbox can be customized. If not filled, the value of label prop will be used by default.</p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.group }}</i-code>
             </Demo>
@@ -57,11 +57,11 @@
                 <div slot="demo">
                     <Checkbox v-model="disabledSingle" disabled>Checkbox</Checkbox>
                     <p class="demo-data">{{ disabledSingle }}</p>
-                    <Checkbox-group v-model="disabledGroup">
+                    <CheckboxGroup v-model="disabledGroup">
                         <Checkbox label="香蕉" disabled></Checkbox>
                         <Checkbox label="苹果" disabled></Checkbox>
                         <Checkbox label="西瓜"></Checkbox>
-                    </Checkbox-group>
+                    </CheckboxGroup>
                     <p class="demo-data">{{ disabledGroup }}</p>
                 </div>
                 <div slot="desc">
@@ -101,11 +101,11 @@
                             :value="checkAll"
                             @click.prevent.native="handleCheckAll">全选</Checkbox>
                     </div>
-                    <Checkbox-group v-model="checkAllGroup" @on-change="checkAllGroupChange">
+                    <CheckboxGroup v-model="checkAllGroup" @on-change="checkAllGroupChange">
                         <Checkbox label="香蕉"></Checkbox>
                         <Checkbox label="苹果"></Checkbox>
                         <Checkbox label="西瓜"></Checkbox>
-                    </Checkbox-group>
+                    </CheckboxGroup>
                 </div>
                 <div slot="desc">
                     <p>You might use <code>indeterminate</code> prop when realise select-all effect. The demo code is just a kind of realisation. There are many other ways you can use in your bussiness.</p>
@@ -149,6 +149,24 @@
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>size</td>
+                            <td>The size of Checkbox. Optional value: <code>large</code>, <code>small</code>, <code>default</code> or leave empty.</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>true-value</td>
+                            <td>Value of the checkbox if it's checked.</td>
+                            <td>String, Number, Boolean</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>false-value</td>
+                            <td>Value of the checkbox if it's not checked.</td>
+                            <td>String, Number, Boolean</td>
+                            <td>false</td>
+                        </tr>
                     </tbody>
                 </table>
                 <Anchor title="Checkbox events" h3></Anchor>
@@ -184,6 +202,12 @@
                             <td>Specify the selected item's set. Use v-model to enable a two-way binding.</td>
                             <td>Array</td>
                             <td>[]</td>
+                        </tr>
+                        <tr>
+                            <td>size</td>
+                            <td>The size of the CheckboxGroup. Optional value: <code>large</code>, <code>small</code>, <code>default</code> or leave empty.</td>
+                            <td>String</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>

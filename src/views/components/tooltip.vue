@@ -167,6 +167,12 @@
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
                     </tbody>
                 </table>
                 <Anchor title="Tooltip events" h3></Anchor>
@@ -179,6 +185,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>on-popper-show</td>
+                            <td>在提示框显示时触发</td>
+                            <td>无</td>
+                        </tr>
                         <tr>
                             <td>on-popper-hide</td>
                             <td>在提示框消失时触发</td>

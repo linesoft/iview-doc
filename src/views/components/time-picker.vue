@@ -10,10 +10,10 @@
                     <div slot="demo">
                         <Row>
                             <Col span="12">
-                                <Time-picker type="time" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker type="time" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                             <Col span="12">
-                                <Time-picker type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -27,10 +27,10 @@
                     <div slot="demo">
                         <row>
                             <Col span="12">
-                                <Time-picker :value="value1" format="HH点mm分ss秒" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker :value="value1" format="HH点mm分ss秒" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                             <Col span="12">
-                                <Time-picker :value="value2" format="HH’mm’ss" type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker :value="value2" format="HH’mm’ss" type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -44,10 +44,10 @@
                     <div slot="demo">
                         <row>
                             <Col span="12">
-                                <Time-picker format="HH:mm" placeholder="选择时间" style="width: 112px"></Time-picker>
+                                <TimePicker format="HH:mm" placeholder="选择时间" style="width: 112px"></TimePicker>
                             </Col>
                             <Col span="12">
-                                <Time-picker format="HH:mm" type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker format="HH:mm" type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -56,23 +56,32 @@
                     </div>
                     <i-code lang="html" slot="code">{{ code.hours }}</i-code>
                 </Demo>
+                <Demo title="时间间隔">
+                    <div slot="demo">
+                        <TimePicker :steps="[1, 15, 15]" placeholder="选择时间" style="width: 112px"></TimePicker>
+                    </div>
+                    <div slot="desc">
+                        <p>通过属性 <code>steps</code> 可以设置时间间隔。数组的三项分别对应小时、分钟、秒。</p>
+                    </div>
+                    <i-code lang="html" slot="code">{{ code.steps }}</i-code>
+                </Demo>
                 <Demo title="不可选时间">
                     <div slot="demo">
                         <row>
                             <Col span="12">
-                                <Time-picker
+                                <TimePicker
                                         :disabled-hours="[1,5,10]"
                                         :disabled-minutes="[0,10,20]"
                                         placeholder="选择时间"
-                                        style="width: 168px"></Time-picker>
+                                        style="width: 168px"></TimePicker>
                             </Col>
                             <Col span="12">
-                                <Time-picker
+                                <TimePicker
                                         hide-disabled-options
                                         :disabled-hours="[1,5,10]"
                                         :disabled-minutes="[0,10,20]"
                                         placeholder="选择时间"
-                                        style="width: 168px"></Time-picker>
+                                        style="width: 168px"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -86,10 +95,10 @@
                     <div slot="demo">
                         <row>
                             <Col span="12">
-                                <Time-picker confirm placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker confirm placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                             <Col span="12">
-                                <Time-picker type="timerange" confirm placement="bottom-end" placeholder="选择时间" style="width: 168px"></Time-picker>
+                                <TimePicker type="timerange" confirm placement="bottom-end" placeholder="选择时间" style="width: 168px"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -101,7 +110,7 @@
                 </Demo>
                 <Demo title="手动控制组件">
                     <div slot="demo">
-                        <Time-picker
+                        <TimePicker
                                 :open="open"
                                 :value="value3"
                                 confirm
@@ -113,7 +122,7 @@
                                 <template v-if="value3 === ''">选择时间</template>
                                 <template v-else>{{ value3 }}</template>
                             </a>
-                        </Time-picker>
+                        </TimePicker>
                     </div>
                     <div slot="desc">
                         <p>对于一些定制化的场景，可以使用 slot 配合参数 <code>open</code> <code>confirm</code> 及事件来手动控制组件的显示状态，详见示例和 API。</p>
@@ -124,13 +133,13 @@
                     <div slot="demo">
                         <row :gutter="16">
                             <Col span="8">
-                                <Time-picker size="small" placeholder="选择时间"></Time-picker>
+                                <TimePicker size="small" placeholder="选择时间"></TimePicker>
                             </Col>
                             <Col span="8">
-                                <Time-picker placeholder="选择时间"></Time-picker>
+                                <TimePicker placeholder="选择时间"></TimePicker>
                             </Col>
                             <Col span="8">
-                                <Time-picker size="large" placeholder="选择时间"></Time-picker>
+                                <TimePicker size="large" placeholder="选择时间"></TimePicker>
                             </Col>
                         </Row>
                     </div>
@@ -184,6 +193,12 @@
                             <td>HH:mm:ss</td>
                         </tr>
                         <tr>
+                            <td>steps</td>
+                            <td>下拉列表的时间间隔，数组的三项分别对应小时、分钟、秒。例如设置为 [1, 15] 时，分钟会显示：00、15、30、45。</td>
+                            <td>Array</td>
+                            <td>[]</td>
+                        </tr>
+                        <tr>
                             <td>placement</td>
                             <td>时间选择器出现的位置，可选值为<code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code></td>
                             <td>String</td>
@@ -209,7 +224,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>尺寸，可选值为<code>large</code>和<code>small</code>或者不设置</td>
+                            <td>尺寸，可选值为<code>large</code>、<code>small</code>、<code>default</code>或者不设置</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -236,6 +251,12 @@
                             <td>文本框是否可以输入，只在没有使用 slot 时有效</td>
                             <td>Boolean</td>
                             <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果</td>
+                            <td>Boolean</td>
+                            <td>false</td>
                         </tr>
                         </tbody>
                     </table>

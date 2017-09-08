@@ -25,6 +25,119 @@
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
+                    <Anchor title="2.3.0 Lumino City" h2></Anchor>
+                    <p>
+                        <code>2017-09-05</code>
+                    </p>
+                    <ul>
+                        <li>Switch 新增 true-value 和 false-value 属性。<issue id="1399"></issue></li>
+                        <li>Input 新增 autocomplete 属性。</li>
+                        <li>Table 的 column 新增 type: html，避免 XSS。<issue id="993"></issue></li>
+                        <li>Table 列为可展开时，支持设置 title 或 renderHeader。</li>
+                        <li>提高 Select 渲染性能。<issue id="1777"></issue></li>
+                        <li>修复 Table 在 columns 为空时，报错的bug。<issue id="1736"></issue></li>
+                        <li>修复 Table 在多选模式下，将所有列都禁用时，状态标记为全部选中的bug。<issue id="1751"></issue></li>
+                        <li>修复 Select 选择 Option 时，将 slot 内的标签一同携带的bug。<issue id="1690"></issue></li>
+                        <li>修复 Select 在 remote 模式下，手动清空数据后没有清空 label 的bug。<issue id="1743"></issue></li>
+                        <li>修复 Rate 半选状态初始化不正确的bug。<issue id="1761"></issue></li>
+                        <li>修复 Date 在 IE11 下无法显示初始值的bug。<issue id="1422"></issue></li>
+                        <li>修复 Date 在选择时间模式下，清空再次选择后时间错误的bug。<issue id="1223"></issue></li>
+                        <li>修复 Date 无默认值时，有时选择的时间提前一天的bug。<issue id="1734"></issue></li>
+                        <li>修复 Tabs 在 IE11 下，边线宽度设置不正确的bug。<issue id="695"></issue></li>
+                        <li>修复 Tooltip 在 always 模式下，错位的bug。<issue id="1568"></issue></li>
+                        <li>修复 Slider 双击滑块时，滑块跳动的bug。<issue id="1354"></issue></li>
+                        <li>修复 Cascader 在 transfer 模式下，部分样式错误的bug。<issue id="1728"></issue></li>
+                        <li>新增印尼语。<mention id="IndraGunawan"></mention></li>
+                        <blockquote>特别感谢 <mention id="SergioCrisostomo"></mention></blockquote>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item color="red">
+                    <Icon type="ios-heart" size="18" slot="dot"></Icon>
+                    <Anchor title="2.2.0 Shadowmatic" h2></Anchor>
+                    <p>
+                        <code>2017-08-28</code>
+                    </p>
+                    <ul>
+                        <li>新增头像组件 Avatar。<router-link to="/components/avatar">查看</router-link></li>
+                        <li>新增颜色选择器组件 ColorPicker。<router-link to="/components/color-picker">查看</router-link></li>
+                        <li>新增自动完成组件 AutoComplete。<router-link to="/components/auto-complete">查看</router-link></li>
+                        <li>Form 支持对 ColorPicker 和 AutoComplete 组件的验证。</li>
+                        <li>Radio 和 RadioGroup 新增 size 属性。</li>
+                        <li>Checkbox 和 CheckboxGroup 新增 size 属性。</li>
+                        <li>具有 size 属性的组件都增加了 default。</li>
+                        <li>修复 Select 在 filterable 模式下，开启 disabled 后仍然能够输入的bug。<issue id="1547"></issue></li>
+                        <li>修复 Poptip 在 transfer 模式下，使用 confirm 样式错乱的bug。<issue id="1612"></issue></li>
+                        <li>修复 InputNumber 的一个问题。<issue id="1654"></issue></li>
+                        <li>优化 Grid 组件对 gutter 的设置。<issue id="1661"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.1.0 Alto's Adventure" h2></Anchor>
+                    <p>
+                        <code>2017-08-14</code>
+                    </p>
+                    <ul>
+                        <li>TimePicker 新增属性 steps, 可以设置小时、分钟、秒的间隔。<mention id="SergioCrisostomo"></mention></li>
+                        <li>Radio、Checkbox 新增 true-value 和 false-value 属性。<issue id="1191"></issue></li>
+                        <li>Page 的 current 属性支持 .sync 修饰符。</li>
+                        <li>Poptip、Tooltip 增加 on-popper-show 事件。</li>
+                        <li>优化 Table 导出 csv 在 Safari 浏览器下的表现。</li>
+                        <li>修复 Cascader 在 change-on-select 模式下，再次选择时没有重置子列表的bug。<issue id="1553"></issue></li>
+                        <li>修复 Cascader 在动态加载选项，children 的数据为空时递归触发请求的bug。</li>
+                        <li>修复 InputNumber 有时计算不准确的bug。<issue id="1452"></issue></li>
+                        <li>修复 InputNumber 没有监听 min 和 max 的bug。<issue id="1134"></issue></li>
+                        <li>修复 Page 在改变 total 时，页码计算不正确的bug。<issue id="1543"></issue></li>
+                        <li>修复 Date 在 datetimerange 模式下，返回数据不正确的bug。<issue id="1220"></issue></li>
+                        <li>修复 Tree 在 children 为空时，自动勾选的bug。<issue id="1504"></issue></li>
+                        <li>修复 Form 重置后，部分组件首次无法校验的bug。<issue id="1534"></issue></li>
+                        <li>新增越南语。<mention id="hckhanh"></mention></li>
+                        <li>新增葡萄牙语。<mention id="SergioCrisostomo"></mention></li>
+                        <li>新增瑞典语。<mention id="SergioCrisostomo"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item color="green">
+                    <Icon type="trophy" size="18" slot="dot"></Icon>
+                    <Anchor title="2.0.0 Leo's Fortune" h2></Anchor>
+                    <p>
+                        <code>2017-07-28</code>
+                    </p>
+                    <ul>
+                        <li>Nuxt.js 支持使用多语言。<router-link to="/docs/guide/i18n">查看</router-link></li>
+                        <li>Modal 的 width 当不大于 100 时，将以百分比显示。</li>
+                        <li>Progress 新增垂直方向属性 vertical。<issue id="629"></issue></li>
+                        <li>Table 新增默认排序属性 sortType。<issue id="1403"></issue></li>
+                        <li>Table 在多选时，阻止冒泡。<issue id="1271"></issue></li>
+                        <li>Table 的自定义表头方法 renderHeader 改为了 Render 函数。<issue id="1357"></issue></li>
+                        <li>Table 在排序时，点击表头标题也可以进行排序。<issue id="122"></issue></li>
+                        <li>修复 Table 内使用 Select、Dropdown 等组件无法收起的bug。<issue id="1341"></issue></li>
+                        <li>修复 Table 在数据为空时，固定列高度不正确的bug。<issue id="1387"></issue></li>
+                        <li>修复 Table 在数据为空时，未设置宽度的 column 消失的bug。<issue id="658"></issue></li>
+                        <li>修复 Table 在数据为空，设置表格高度时，添加数据后，表格高度计算不正确的bug。<a href="https://github.com/iview/iview/commit/119eeafedea02d984650b82920abdcdf4e809f79" target="_blank">commit</a></li>
+                        <li>
+                            Modal、Poptip、Tooltip、Dropdown、Select、Date、Cascader 组件新增 transfer 属性，开启会将浮层移动到 body 内。<issue id="830"></issue> <issue id="844"></issue> <issue id="1187"></issue>
+                            <blockquote>带有浮层的组件，在 Tabs、带有 fixed 的 Table 内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果。</blockquote>
+                        </li>
+                        <li>Input 新增事件 @on-keyup、@on-keydown、@on-keypress。</li>
+                        <li>修复 Select 在 remote 模式下，在 Modal 内使用时，浮层错位的bug。<issue id="1099"></issue></li>
+                        <li>修复 Tabs 嵌套使用时，外层禁用动画，内层无法切换的bug。<issue id="1427"></issue></li>
+                        <li>新增韩语。<mention id="dokenzy"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.0.0-rc.19" h2></Anchor>
+                    <p>
+                        <code>2017-07-17</code>
+                    </p>
+                    <ul>
+                        <li>支持 Vue 2.4.1。</li>
+                        <li>支持 SSR 和 Nuxt.js。<issue id="1315"></issue></li>
+                        <li>Page 支持小键盘操作。<issue id="1318"></issue></li>
+                        <li>Table 新增取消当前行事件 @on-select-cancel。<issue id="705"></issue></li>
+                        <li>修复 Select 在 remote 模式下，手动设置 label 不生效的bug。<issue id="1286"></issue></li>
+                        <li>修复 Table、Cascader、Tree 在 Vue 2.4.1 版本下，报错的问题。<issue id="1353"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
                     <Anchor title="2.0.0-rc.18" h2></Anchor>
                     <p>
                         <code>2017-07-03</code>

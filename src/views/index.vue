@@ -18,9 +18,7 @@
                 <i-col span="24">
                     <h1>
                         <img src="../images/logo.png" class="img-logo">
-                        <Badge count="2.0.0" class="index-version">
-                            <img src="../images/name.png" class="img-name">
-                        </Badge>
+                        <img src="../images/name.png" class="img-name">
                     </h1>
                     <h2>{{ $t('index.title') }}</h2>
                     <div class="list">
@@ -124,7 +122,6 @@
                     container.appendChild( renderer.domElement );
 
                     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-                    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
                     document.addEventListener( 'touchmove', onDocumentTouchMove, false );
                 }
 
@@ -133,18 +130,6 @@
                     mouseX = event.clientX - windowHalfX;
                     mouseY = event.clientY - windowHalfY;
 
-                }
-
-                function onDocumentTouchStart( event ) {
-
-                    if ( event.touches.length == 1 ) {
-
-                        event.preventDefault();
-
-                        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-                    }
                 }
 
                 function onDocumentTouchMove( event ) {

@@ -139,6 +139,12 @@ const list = {
                     icon: 'ios-arrow-down'
                 },
                 {
+                    title: 'AutoComplete 自动完成',
+                    path: '/components/auto-complete',
+                    img: 'auto-complete.png',
+                    icon: 'ios-list-outline'
+                },
+                {
                     title: 'Slider 滑块',
                     path: '/components/slider',
                     img: 'slider.png',
@@ -187,6 +193,12 @@ const list = {
                     icon: 'ios-cloud-upload-outline'
                 },
                 {
+                    title: 'ColorPicker 颜色选择器',
+                    path: '/components/color-picker',
+                    img: 'color-picker.png',
+                    icon: 'android-color-palette'
+                },
+                {
                     title: 'Form 表单',
                     path: '/components/form',
                     img: 'form.png',
@@ -233,6 +245,12 @@ const list = {
                     path: '/components/progress',
                     img: 'progress.png',
                     icon: 'android-remove'
+                },
+                {
+                    title: 'Avatar 头像',
+                    path: '/components/avatar',
+                    img: 'avatar.png',
+                    icon: 'person'
                 },
                 {
                     title: 'Badge 徽标数',

@@ -15,13 +15,30 @@ code.base = `
 </script>
 `;
 
+code.vertical = `
+<template>
+    <div style="height: 100px;">
+        <Progress vertical :percent="25"></Progress>
+        <Progress vertical :percent="45" status="active"></Progress>
+        <Progress vertical :percent="65" status="wrong"></Progress>
+        <Progress vertical :percent="100"></Progress>
+        <Progress vertical :percent="25" hide-info></Progress>
+    </div>
+</template>
+<script>
+    export default {
+        
+    }
+</script>
+`;
+
 code.percent = `
 <template>
     <Progress :percent="percent"></Progress>
-    <Button-group size="large">
+    <ButtonGroup size="large">
         <Button icon="ios-plus-empty" @click="add"></Button>
         <Button icon="ios-minus-empty" @click="minus"></Button>
-    </Button-group>
+    </ButtonGroup>
 </template>
 <script>
     export default {

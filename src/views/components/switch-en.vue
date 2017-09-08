@@ -86,7 +86,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>Set the size to <code>large</code> or <code>small</code> to use large/small size of switch, by default the switch's size is medium. It is recommended that if you use 2 characters, set the switch size to large.</td>
+                            <td>Set the size to <code>large</code>, <code>small</code> or <code>default</code> to use large/small size of switch, by default the switch's size is medium. It is recommended that if you use 2 characters, set the switch size to large.</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -94,6 +94,18 @@
                             <td>disabled</td>
                             <td>Disabled state of Switch.</td>
                             <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>true-value</td>
+                            <td>Value of the switch if it's checked.</td>
+                            <td>String, Number, Boolean</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>false-value</td>
+                            <td>Value of the switch if it's not checked.</td>
+                            <td>String, Number, Boolean</td>
                             <td>false</td>
                         </tr>
                     </tbody>

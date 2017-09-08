@@ -19,13 +19,28 @@
                 </div>
                 <i-code lang="html" slot="code">{{ code.base }}</i-code>
             </Demo>
+            <Demo title="垂直方向">
+                <div slot="demo">
+                    <div style="height: 100px;">
+                        <Progress vertical :percent="25"></Progress>
+                        <Progress vertical :percent="45" status="active"></Progress>
+                        <Progress vertical :percent="65" status="wrong"></Progress>
+                        <Progress vertical :percent="100"></Progress>
+                        <Progress vertical :percent="25" hide-info></Progress>
+                    </div>
+                </div>
+                <div slot="desc">
+                    <p>设置属性 <code>vertical</code> 将以垂直方向显示。</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.vertical }}</i-code>
+            </Demo>
             <Demo title="配合外部组件使用">
                 <div slot="demo">
                     <Progress :percent="percent"></Progress>
-                    <Button-group size="large">
+                    <ButtonGroup size="large">
                         <Button icon="ios-plus-empty" @click="add"></Button>
                         <Button icon="ios-minus-empty" @click="minus"></Button>
-                    </Button-group>
+                    </ButtonGroup>
                 </div>
                 <div slot="desc">
                     <p>通过数据的联动和逻辑控制，实现动态效果。</p>
@@ -79,6 +94,12 @@
                         <tr>
                             <td>hide-info</td>
                             <td>隐藏数值或状态图标</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>vertical</td>
+                            <td>是否在垂直方向显示</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>

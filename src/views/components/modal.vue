@@ -258,7 +258,7 @@
                         </tr>
                         <tr>
                             <td>width</td>
-                            <td>对话框宽度，单位 px。对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动<code>auto</code></td>
+                            <td>对话框宽度，对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动<code>auto</code>。当其值不大于 100 时以百分比显示，大于 100 时为像素</td>
                             <td>Number | String</td>
                             <td>520</td>
                         </tr>
@@ -279,6 +279,12 @@
                             <td>自定义显示动画，第一项是模态框，第二项是背景</td>
                             <td>Array</td>
                             <td>['ease', 'fade']</td>
+                        </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>是否将弹层放置于 body 内</td>
+                            <td>Boolean</td>
+                            <td>true</td>
                         </tr>
                     </tbody>
                 </table>

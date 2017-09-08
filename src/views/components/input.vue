@@ -155,7 +155,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>输入框尺寸，可选值为<code>large</code>和<code>small</code>或者不设置</td>
+                            <td>输入框尺寸，可选值为<code>large</code>、<code>small</code>、<code>default</code>或者不设置</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -213,6 +213,12 @@
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>autocomplete</td>
+                            <td>原生的自动完成功能，可选值为 off 和 on</td>
+                            <td>String</td>
+                            <td>off</td>
+                        </tr>
                     </tbody>
                 </table>
                 <Anchor title="Input events" h3></Anchor>
@@ -249,6 +255,21 @@
                             <td>on-blur</td>
                             <td>输入框失去焦点时触发</td>
                             <td>无</td>
+                        </tr>
+                        <tr>
+                            <td>on-keyup</td>
+                            <td>原生的 keyup 事件</td>
+                            <td>event</td>
+                        </tr>
+                        <tr>
+                            <td>on-keydown</td>
+                            <td>原生的 keydown 事件</td>
+                            <td>event</td>
+                        </tr>
+                        <tr>
+                            <td>on-keypress</td>
+                            <td>原生的 keypress 事件</td>
+                            <td>event</td>
                         </tr>
                     </tbody>
                 </table>

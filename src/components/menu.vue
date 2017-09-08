@@ -17,7 +17,7 @@
                     :placeholder="searchText"
                     :not-found-text="notFoundText"
                     @on-change="handleSearch">
-                    <i-option v-for="item in navigateList" :key="item" :value="item.path">
+                    <i-option v-for="item in navigateList" :key="item.path" :value="item.path">
                         <template v-if="lang === 'zh-CN'">{{ item.title }}</template>
                         <template v-else>{{ item.title.split(' ')[0] }}</template>
                     </i-option>
@@ -38,7 +38,7 @@
                 </Menu-item>
                 <Menu-item name="live">
                     <Badge :dot="liveDot">
-                        <Icon type="ios-mic"></Icon>
+                        <Icon type="ios-videocam"></Icon>
                         {{ $t('index.live') }}
                     </Badge>
                 </Menu-item>
@@ -46,8 +46,8 @@
                     <Icon type="ios-analytics"></Icon>
                     {{ $t('index.practice') }}
                 </Menu-item>
-                <Select size="small" value="2" style="width: 70px;margin: 0 10px;" @on-change="handleVersion">
-                    <Option value="2">2.0.0</Option>
+                <Select size="small" value="2" style="width: 60px;margin: 0 10px;" @on-change="handleVersion">
+                    <Option value="2">2.x</Option>
                     <Option value="1">1.x</Option>
                 </Select>
                 <Button type="ghost" size="small" @click="handleChangeLang" >

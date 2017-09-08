@@ -140,6 +140,7 @@
                     <div slot="desc">
                         <p>通过给 <code>columns</code> 数据的项，设置 <code>sortable: true</code>，即可对该列数据进行排序。</p>
                         <p>排序默认使用升序和降序，也可以通过设置属性 <code>sortMethod</code> 指定一个自定义排序函数，接收三个参数 a 、 b 和 type。</p>
+                        <p>通过给某一列设置 <code>sortType</code> 可以在初始化时使用排序。</p>
                         <p>如果使用远程排序，可以设置 <code>sortable： 'custom'</code>，然后在触发排序事件 <code>@on-sort-change</code>后，进行远程排序，并手动设置新的 data，详见 API。</p>
                         <p>注意，排序并不会影响到源数据 data。</p>
                     </div>
@@ -357,6 +358,16 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>on-select-cancel</td>
+                            <td>在多选模式下有效，取消选中某一项时触发</td>
+                            <td>
+                                <ul>
+                                    <li><code>selection</code>：已选项数据</li>
+                                    <li><code>row</code>：取消选择的项数据</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>on-select-all</td>
                             <td>在多选模式下有效，点击全选时触发</td>
                             <td>
@@ -492,6 +503,12 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td>type</td>
+                            <td>列类型，可选值为 index、selection、expand、html</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
                             <td>title</td>
                             <td>列头显示文字</td>
                             <td>String</td>
@@ -542,7 +559,7 @@
                         </tr>
                         <tr>
                             <td>renderHeader</td>
-                            <td>自定义列头显示内容，传入参数有两个，<code>column</code> 和 <code>index</code>，分别为当前列数据和当前列索引，不支持渲染自定义组件</td>
+                            <td>自定义列头显示内容，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 <code>column</code> 和 <code>index</code>，分别为当前列数据和当前列索引。</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>
@@ -555,6 +572,12 @@
                         <tr>
                             <td>sortMethod</td>
                             <td>自定义排序使用的方法，接收三个参数 a 、 b 和 type，当设置 <code>sortable: true</code> 时有效。type 值为 asc 和 desc</td>
+                            <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>sortType</td>
+                            <td>设置初始化排序。值为 asc 和 desc</td>
                             <td>Function</td>
                             <td>-</td>
                         </tr>

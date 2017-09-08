@@ -3,7 +3,7 @@ let code = {};
 code.base = `
 <template>
     <Select v-model="model1" style="width:200px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
 </template>
 <script>
@@ -46,13 +46,13 @@ code.base = `
 code.size = `
 <template>
     <Select v-model="model2" size="small" style="width:100px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
     <Select v-model="model3" style="width:100px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
     <Select v-model="model4" size="large" style="width:100px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
 </template>
 <script>
@@ -97,7 +97,7 @@ code.size = `
 code.disabled = `
 <template>
     <Select v-model="model5" disabled style="width:200px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
     <Select v-model="model6" style="width:200px">
         <Option value="beijing">北京市</Option>
@@ -146,7 +146,7 @@ code.disabled = `
 code.clearable = `
 <template>
     <Select v-model="model8" clearable style="width:200px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
 </template>
 <script>
@@ -189,12 +189,12 @@ code.clearable = `
 code.group = `
 <template>
     <Select v-model="model7" style="width:200px">
-        <Option-group label="热门城市">
-            <Option v-for="item in cityList1" :value="item.value" :key="item">{{ item.label }}</Option>
-        </Option-group>
-        <Option-group label="其它城市">
-            <Option v-for="item in cityList2" :value="item.value" :key="item">{{ item.label }}</Option>
-        </Option-group>
+        <OptionGroup label="热门城市">
+            <Option v-for="item in cityList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
+        </OptionGroup>
+        <OptionGroup label="其它城市">
+            <Option v-for="item in cityList2" :value="item.value" :key="item.value">{{ item.label }}</Option>
+        </OptionGroup>
     </Select>
 </template>
 <script>
@@ -293,7 +293,7 @@ code.label = `
 code.multiple = `
 <template>
     <Select v-model="model10" multiple style="width:260px">
-        <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
 </template>
 <script>
@@ -338,12 +338,12 @@ code.filterable = `
     <Row>
         <Col span="12" style="padding-right:10px">
             <Select v-model="model11" filterable>
-                <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
         </Col>
         <Col span="12">
             <Select v-model="model12" filterable multiple>
-                <Option v-for="item in cityList" :value="item.value" :key="item">{{ item.label }}</Option>
+                <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
         </Col>
     </Row>
@@ -396,7 +396,7 @@ code.remote = `
                 remote
                 :remote-method="remoteMethod1"
                 :loading="loading1">
-                <Option v-for="option in options1" :value="option.value" :key="new Date()">{{option.label}}</Option>
+                <Option v-for="(option, index) in options1" :value="option.value" :key="index">{{option.label}}</Option>
             </Select>
         </Col>
         <Col span="12">
@@ -407,7 +407,7 @@ code.remote = `
             remote
             :remote-method="remoteMethod2"
             :loading="loading2">
-            <Option v-for="option in options2" :value="option.value" :key="new Date()">{{option.label}}</Option>
+            <Option v-for="(option, index) in options2" :value="option.value" :key="index">{{option.label}}</Option>
         </Select>
         </Col>
     </Row>
@@ -421,7 +421,8 @@ code.remote = `
                 options1: [],
                 model14: [],
                 loading2: false,
-                options2: []
+                options2: [],
+                list: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming']
             }
         },
         methods: {

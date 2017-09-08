@@ -258,7 +258,7 @@
                         </tr>
                         <tr>
                             <td>width</td>
-                            <td>The width of Modal. Unit: px. The width is responsive: It'll change to <code>auto</code> when the size of the screen is smaller than 768px.</td>
+                            <td>The width of Modal. The width is responsive: It'll change to <code>auto</code> when the size of the screen is smaller than 768px. It will be displayed as a percentage when the value less than 100, otherwise it is a pixel.</td>
                             <td>Number | String</td>
                             <td>520</td>
                         </tr>
@@ -279,6 +279,12 @@
                             <td>Custom transition. The first transition is Modal itself, the second is the background.</td>
                             <td>Array</td>
                             <td>['ease', 'fade']</td>
+                        </tr>
+                        <tr>
+                            <td>transfer</td>
+                            <td>Whether to append the layer in body.</td>
+                            <td>Boolean</td>
+                            <td>true</td>
                         </tr>
                     </tbody>
                 </table>

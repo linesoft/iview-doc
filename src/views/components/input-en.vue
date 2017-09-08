@@ -155,7 +155,7 @@
                         </tr>
                         <tr>
                             <td>size</td>
-                            <td>The size of Input. Optional value: <code>large</code>, <code>small</code> or leave empty.</td>
+                            <td>The size of Input. Optional value: <code>large</code>, <code>small</code>, <code>default</code> or leave empty.</td>
                             <td>String</td>
                             <td>-</td>
                         </tr>
@@ -213,6 +213,12 @@
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>autocomplete</td>
+                            <td>Native autocomplete function, Optional value: off and on</td>
+                            <td>String</td>
+                            <td>off</td>
+                        </tr>
                     </tbody>
                 </table>
                 <Anchor title="Input events" h3></Anchor>
@@ -249,6 +255,21 @@
                             <td>on-blur</td>
                             <td>Emitted when Input loses focus.</td>
                             <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>on-keyup</td>
+                            <td>Native keyup event.</td>
+                            <td>event</td>
+                        </tr>
+                        <tr>
+                            <td>on-keydown</td>
+                            <td>Native keydown event.</td>
+                            <td>event</td>
+                        </tr>
+                        <tr>
+                            <td>on-keypress</td>
+                            <td>Native keypress event.</td>
+                            <td>event</td>
                         </tr>
                     </tbody>
                 </table>
